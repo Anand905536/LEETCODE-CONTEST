@@ -1,0 +1,25 @@
+static bool sortbysecdesc( pair<string,int> &a, pair<string,int> &b)
+{
+       return a.second>b.second;
+}
+    vector<string> sortPeople(vector<string>& names, vector<int>& heights)
+    {
+        vector<string>ans;
+        	vector<pair<string, int>> vec;
+           for (int i=0;i<names.size();i++) 
+           {
+             vec.push_back(make_pair(names[i], heights[i]));
+           }
+            sort(vec.begin(),vec.end(),sortbysecdesc);
+        
+        for(auto i:vec)
+        {
+            ans.push_back(i.first);
+        }
+            // for(auto i:vec){
+            //    cout<<i.first<<" "<<i.second<<endl;
+            //  }
+        
+        return ans;     
+        }
+};
