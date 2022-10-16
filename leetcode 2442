@@ -1,0 +1,40 @@
+first insert reverse integer of given array into another array then take a set and insert both the array element into into the set and then return the size of set
+(we know the property of set that it insert only value which is not there) 
+
+
+
+
+
+
+
+int reverse(int n)
+    {   
+        int reversed_number=0;
+        while(n != 0)
+        {
+         int  remainder = n % 10;
+         reversed_number = reversed_number * 10 + remainder;
+         n /= 10;
+        } 
+        return reversed_number;
+    }
+    int countDistinctIntegers(vector<int>& nums) {
+        int k=nums.size();
+        vector<int>ans;
+        for(int i=0;i<k;i++)
+        {
+            int dig=reverse(nums[i]);
+            ans.push_back(dig);
+        }       
+        unordered_set<int>st;
+        int i=0;
+        int j=0;
+        while(i<k || j<ans.size())
+        {
+            if(i<k)st.insert(nums[i++]);
+         
+            if(j<ans.size())st.insert(ans[j++]);
+        }
+        return st.size();
+
+    }
