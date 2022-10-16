@@ -1,0 +1,25 @@
+ int findMaxK(vector<int>& nums) {
+ 
+        if(nums.size()==1)return -1;
+        
+        sort(nums.begin(),nums.end());                    
+        
+        vector<int>ans;
+        for(int i=0;i<nums.size();i++)
+        {
+            if(nums[i]<0)ans.push_back(nums[i]);         //inserting into another array 
+        }
+        
+        int i=nums.size()-1;
+        int j=0;
+        while(i>=0 && j<ans.size())                        //applying two pinter approach (increasing decresing according to condition)
+        {
+            if(nums[i]>ans[j]*-1)i--;
+            
+            else if(nums[i]<ans[j]*-1)j++;
+            
+            else return nums[i];
+            
+        }
+        return -1;                                                 // or else return -1;
+    }
