@@ -5,8 +5,6 @@ first insert reverse integer of given array into another array then take a set a
 
 
 
-
-
 int reverse(int n)
     {   
         int reversed_number=0;
