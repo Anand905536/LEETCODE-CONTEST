@@ -1,0 +1,8 @@
+ vector<double> convertTemperature(double celsius) {
+        double fah=double(celsius * 1.80 + 32.00);
+        double kel=double(celsius + 273.15);
+        vector<double>ans;
+        ans.push_back(kel);
+        ans.push_back(fah);
+        return ans;
+    }
