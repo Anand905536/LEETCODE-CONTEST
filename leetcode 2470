@@ -1,0 +1,14 @@
+ int subarrayLCM(vector<int>& nums, int k) {
+         unsigned int a=nums.size();
+        unsigned int res=0;
+       for(int i=0;i<a;i++)
+     {
+  	    unsigned int num=nums[i];
+  	    for(int j=i;j<a;j++)
+  	   {
+  		  num=lcm(num,nums[j]);
+  		  if(num==k)res++;
+  	   }
+    }
+       return res;
+    }
